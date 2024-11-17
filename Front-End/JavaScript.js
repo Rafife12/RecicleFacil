@@ -10,7 +10,6 @@ function signUp() {
     }
 }
 
-
 function recoverPassword() {
     const email = document.getElementById('forgot-email').value;
     if (email) {
