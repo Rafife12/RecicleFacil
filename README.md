@@ -32,6 +32,8 @@ O projeto está organizado com as seguintes linguagens:
 
 ## Tela de Login
 
+![Página de Login - Recicle Facil](https://github.com/user-attachments/assets/33aafbcb-ecf3-462c-9347-e1d19c1816cb)
+
 A tela de Login foi criada com as linguagens em HTML e CSS:
 
 - HTML:
