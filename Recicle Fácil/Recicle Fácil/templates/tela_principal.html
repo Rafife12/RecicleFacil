@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Principal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tela_principal.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+            <h1>Recicle Fácil</h1>
+        </div>
+    </header>
+    <main>
+        <div class="button-container">
+            <a href="/cadastrar_residuo" class="btn">Cadastrar Resíduo</a>
+            <a href="/dashboards" class="btn">Dashboards</a>
+        </div>
+    </main>
+</body>
+</html>
