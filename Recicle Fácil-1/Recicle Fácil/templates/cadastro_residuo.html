@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Resíduos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro_residuo.css') }}">
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='/principal'" class="btn-voltar">Voltar</button>
+        <div class="form-container">
+            <h1>Cadastro de Resíduos</h1>
+            <form id="cadastro-residuo-form" method="POST" action="/cadastrar_residuo">
+                <label for="nome">Nome do Resíduo</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Embalagens de Papelão" required>
+
+                <fieldset>
+                    <legend>Classificação</legend>
+                    <label><input type="checkbox" name="classificacao" value="Reciclável"> Reciclável</label>
+                    <label><input type="checkbox" name="classificacao" value="Orgânico"> Orgânico</label>
+                    <label><input type="checkbox" name="classificacao" value="Eletrônico"> Eletrônico</label>
+                    <label><input type="checkbox" name="classificacao" value="Perigoso"> Perigoso</label>
+                </fieldset>
+
+                <label for="tipo_residuo">Tipo de Resíduo</label>
+                <select id="tipo_residuo" name="tipo_residuo" required>
+                    <option value="">Selecione o tipo</option>
+                    <option value="Plástico">Plástico</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Vidro">Vidro</option>
+                    <option value="Papel">Papel</option>
+                </select>
+
+                <label for="quantidade">Quantidade (em kg)</label>
+                <input type="number" id="quantidade" name="quantidade" placeholder="Ex: 10" min="1" required>
+
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" placeholder="Adicione uma descrição opcional"></textarea>
+
+                <button type="submit" class="btn">Cadastrar Resíduo</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/cadastro_residuo.js') }}"></script>
+</body>
+</html>
