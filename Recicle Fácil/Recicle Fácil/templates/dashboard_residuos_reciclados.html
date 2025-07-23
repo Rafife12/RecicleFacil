@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard: Resíduos Reciclados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard_residuos_reciclados.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar de navegação -->
+        <nav class="sidebar">
+            <h2>Navegação</h2>
+            <ul>
+                <li><a href="/dashboards">Pontos de Coleta</a></li>
+                <li><a href="/dashboards/residuos_reciclados" class="active">Resíduos Reciclados</a></li>
+                <!-- Outros dashboards podem ser adicionados aqui -->
+            </ul>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <div class="content">
+            <h1>Dashboard: Resíduos Reciclados por Bairro (2022)</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bairro</th>
+                        {% for mes in meses %}
+                        <th>{{ mes }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for linha in tabela %}
+                    <tr>
+                        <td>{{ linha["Bairro"] }}</td>
+                        {% for mes in meses %}
+                        <td>{{ linha[mes] }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
